@@ -1,0 +1,44 @@
+`timescale 1ns/1ps
+
+module tb_Smart_Energy_Monitoring;
+
+    reg [3:0] input_value;
+    wire [6:0] power;
+    wire overload;
+
+    Smart_Energy_Monitoring uut (
+        .input_value(input_value),
+        .power(power),
+        .overload(overload)
+    );
+
+    initial begin
+
+        // Test 1: 0
+        input_value = 4'd0;
+        #10;
+
+        // Test 2: 5 -> power = 50
+        input_value = 4'd5;
+        #10;
+
+        // Test 3: 8 -> power = 80
+        input_value = 4'd8;
+        #10;
+
+        // Test 4: 10 -> power = 100
+        input_value = 4'd10;
+        #10;
+
+        // Test 5: 11 -> power = 110, overload ON
+        input_value = 4'd11;
+        #10;
+
+        // Test 6: 15 -> power = 150, overload ON
+        input_value = 4'd15;
+        #10;
+
+        $stop;
+    end
+
+endmodule
