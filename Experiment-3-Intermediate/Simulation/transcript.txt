@@ -1,0 +1,83 @@
+ Reading pref.tcl
+# //  Questa Altera Starter FPGA Edition-64
+# //  Version 2025.2 win64 May 31 2025
+# //
+# // Unpublished work. Copyright 2025 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# do Industrial_Machine_Health_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Questa Altera Starter FPGA Edition-64 vmap 2025.2 Lib Mapping Utility 2025.05 May 31 2025
+# vmap work rtl_work 
+# ** Note: (vmap-220) 'c:/altera_lite/25.1std/questa_fse/win64/../modelsim.ini' is used as the ini file.
+# Copying c:/altera_lite/25.1std/questa_fse/win64/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog  -work work +incdir+C:/Users/laksh/AppData/Local/quartus/projects/Industrial_Machine_Health {C:/Users/laksh/AppData/Local/quartus/projects/Industrial_Machine_Health/industrial_machine_health.v}
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 09:56:01 on Oct 08,2026
+# vlog -reportprogress 300 -work work "+incdir+C:/Users/laksh/AppData/Local/quartus/projects/Industrial_Machine_Health" C:/Users/laksh/AppData/Local/quartus/projects/Industrial_Machine_Health/industrial_machine_health.v 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module Industrial_Machine_Health
+# 
+# Top level modules:
+# 	Industrial_Machine_Health
+# End time: 09:56:01 on Oct 08,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vlog -reportprogress 300 -work work C:/Users/laksh/AppData/Local/quartus/projects/Industrial_Machine_Health/tb_Industrial_Machine_Health.v
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 09:56:17 on Oct 08,2026
+# vlog -reportprogress 300 -work work C:/Users/laksh/AppData/Local/quartus/projects/Industrial_Machine_Health/tb_Industrial_Machine_Health.v 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module tb_Industrial_Machine_Health
+# 
+# Top level modules:
+# 	tb_Industrial_Machine_Health
+# End time: 09:56:17 on Oct 08,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim -gui -l msim_transcript work.tb_Industrial_Machine_Health
+# ** Note: (vsim-220) 'modelsim.ini' is used as the ini file.
+# vsim -gui -l msim_transcript work.tb_Industrial_Machine_Health 
+# Start time: 09:56:30 on Oct 08,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Note: (vopt-220) 'modelsim.ini' is used as the ini file.
+# Loading work.tb_Industrial_Machine_Health(fast)
+add wave -r sim:/tb_Industrial_Machine_Health/*
+# ** UI-Msg (Warning): (vish-4014) No objects found matching '/tb_Industrial_Machine_Health/*'.
+add wave -r sim:/tb_Industrial_Machine_Health
+# ** UI-Msg (Warning): (vish-4014) No objects found matching '/tb_Industrial_Machine_Health'.
+# Loading work.tb_Industrial_Machine_Health(fast)
+# Loading work.tb_Industrial_Machine_Health(fast)
+quit -sim
+# End time: 10:00:14 on Oct 08,2026, Elapsed time: 0:03:44
+# Errors: 0, Warnings: 0
+vsim -voptargs=+acc work.tb_Industrial_Machine_Health
+# ** Note: (vsim-220) 'modelsim.ini' is used as the ini file.
+# vsim -voptargs="+acc" work.tb_Industrial_Machine_Health 
+# Start time: 10:00:44 on Oct 08,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10908) Some optimizations are turned off because the +acc switch is in effect.
+# ** Note: (vopt-220) 'modelsim.ini' is used as the ini file.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.tb_Industrial_Machine_Health(fast)
+# Loading work.Industrial_Machine_Health(fast)
+add wave -r sim:/tb_Industrial_Machine_Health/*
+run 70 ns
+# ** Note: $stop    : C:/Users/laksh/AppData/Local/quartus/projects/Industrial_Machine_Health/tb_Industrial_Machine_Health.v(42)
+#    Time: 70 ns  Iteration: 0  Instance: /tb_Industrial_Machine_Health
+# Break in Module tb_Industrial_Machine_Health at C:/Users/laksh/AppData/Local/quartus/projects/Industrial_Machine_Health/tb_Industrial_Machine_Health.v line 42
+wave zoom full
+# {0 ps} {73500 ps}
